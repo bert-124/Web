@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GOAT Dribble</title>
+    <style>
+        :root {
+            --pitch-green: #2ecc71;
+            --pitch-dark: #27ae60;
+            --text-gold: #f1c40f;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, var(--pitch-green), var(--pitch-dark));
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* The Scene */
+        .pitch {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        /* Lionel Messi Emoji */
+        .messi {
+            position: absolute;
+            font-size: 5rem;
+            bottom: 0;
+            left: 0;
+            animation: dribble 4s infinite linear;
+            z-index: 2;
+        }
+
+        /* The Football */
+        .ball {
+            position: absolute;
+            font-size: 2rem;
+            bottom: 5px;
+            left: 60px;
+            animation: ball-move 4s infinite linear;
+            z-index: 1;
+        }
+
+        /* Dribbling Logic */
+        @keyframes dribble {
+            0% { left: 0%; transform: scaleX(1); }
+            45% { transform: scaleX(1); }
+            50% { left: 70%; transform: scaleX(-1); } /* Turn around */
+            95% { transform: scaleX(-1); }
+            100% { left: 0%; transform: scaleX(1); }
+        }
+
+        @keyframes ball-move {
+            0% { left: 60px; transform: rotate(0deg); }
+            48% { left: calc(70% + 50px); transform: rotate(720deg); }
+            52% { left: calc(70% - 30px); transform: rotate(720deg); }
+            100% { left: 40px; transform: rotate(0deg); }
+        }
+
+        .stars {
+            color: var(--text-gold);
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Magical Messi</h1>
+        
+        <div class="pitch">
+            <div class="messi">🐐</div>
+            <div class="ball">⚽</div>
+        </div>
+
+        <div class="stars">★★★★★</div>
+    </div>
+
+</body>
+</html>
